@@ -37,11 +37,17 @@ export default function NewThread() {
 
     setLoading(true);
     try {
-      const res = await axios.post(`${API_URL}/api/threads`, {
-        ...formData,
-        user_id: user.id
-      });
-      navigate(`/thread/${res.data.id}`);
+      const { data, error } = await supabase
+        .from('threads')
+        .insert([{
+          ...formData,
+          user_id: user.id
+        }])
+        .select()
+        .single();
+
+      if (error) throw error;
+      navigate(`/thread/${data.id}`);
     } catch (err) {
       console.error('Error creating thread:', err);
       alert('Erreur lors de la création');

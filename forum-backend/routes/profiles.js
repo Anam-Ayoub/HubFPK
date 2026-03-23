@@ -18,7 +18,7 @@ router.get('/:username', async (req, res) => {
     // Fetch user's threads
     const { data: threads } = await supabase
       .from('threads')
-      .select('*, categories(name, slug, color)')
+      .select('*, categories(name, slug)')
       .eq('user_id', profile.id)
       .order('created_at', { ascending: false });
 

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
 import ReactMarkdown from 'react-markdown';
@@ -17,14 +17,7 @@ export default function ThreadView() {
   const [replyContent, setReplyContent] = useState('');
   const [replyTo, setReplyTo] = useState(null); // ID of post being replied to
 
-  useEffect(() => {
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setUser(session?.user ?? null);
-    });
-    fetchThread();
-  }, [id]);
-
-  const fetchThread = async () => {
+  const fetchThread = useCallback(async () => {
     try {
       const res = await axios.get(`${API_URL}/api/threads/${id}`);
       setThread(res.data);
@@ -33,17 +26,29 @@ export default function ThreadView() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [id]);
+
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setUser(session?.user ?? null);
+    });
+    fetchThread();
+  }, [id, fetchThread]);
 
   const handleVote = async (targetId, targetType, value) => {
     if (!user) return alert('Veuillez vous connecter pour voter');
     try {
-      await axios.post(`${API_URL}/api/votes`, {
-        user_id: user.id,
-        target_id: targetId,
-        target_type: targetType,
-        value: value
-      });
+      // Upsert vote (Supabase will handle the unique constraint based on setup.sql)
+      const { error } = await supabase
+        .from('votes')
+        .upsert([{
+          user_id: user.id,
+          target_id: targetId,
+          target_type: targetType,
+          value: value
+        }], { onConflict: 'user_id, target_id' });
+
+      if (error) throw error;
       fetchThread(); // Refresh to show new counts
     } catch (err) {
       console.error('Error voting:', err);
@@ -56,12 +61,16 @@ export default function ThreadView() {
     if (!replyContent.trim()) return;
 
     try {
-      await axios.post(`${API_URL}/api/posts`, {
-        content: replyContent,
-        thread_id: id,
-        user_id: user.id,
-        parent_post_id: replyTo
-      });
+      const { error } = await supabase
+        .from('posts')
+        .insert([{
+          content: replyContent,
+          thread_id: id,
+          user_id: user.id,
+          parent_post_id: replyTo
+        }]);
+
+      if (error) throw error;
       setReplyContent('');
       setReplyTo(null);
       fetchThread();
