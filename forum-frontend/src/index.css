@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #1a5c3a;
+  --color-accent: #f59e0b;
+}
+
+/* Custom global styles for HubFPK */
+body {
+  @apply bg-[#f8f9fa] text-gray-900;
+}
+
+.prose h1, .prose h2, .prose h3 {
+  @apply text-[#1a5c3a] font-extrabold;
+}
+
+.prose a {
+  @apply text-blue-600 font-bold hover:underline;
+}
