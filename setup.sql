@@ -3,7 +3,15 @@
 
 -- 1. CLEAN UP (Drop in order of dependencies)
 DROP TRIGGER IF EXISTS on_auth_user_created ON auth.users;
+DROP TRIGGER IF EXISTS on_post_created ON public.posts;
+DROP TRIGGER IF EXISTS on_vote_created ON public.votes;
+DROP TRIGGER IF EXISTS on_thread_created_or_deleted ON public.threads;
+
 DROP FUNCTION IF EXISTS public.handle_new_user();
+DROP FUNCTION IF EXISTS public.increment_karma(UUID, INTEGER);
+DROP FUNCTION IF EXISTS public.handle_new_notification();
+DROP FUNCTION IF EXISTS public.handle_thread_count_change();
+
 DROP TABLE IF EXISTS notifications CASCADE;
 DROP TABLE IF EXISTS votes CASCADE;
 DROP TABLE IF EXISTS posts CASCADE;
@@ -28,7 +36,6 @@ CREATE TABLE categories (
   slug TEXT UNIQUE NOT NULL,
   description TEXT,
   icon TEXT, -- Lucide icon name
-  thread_count INTEGER DEFAULT 0,
   created_at TIMESTAMPTZ DEFAULT now()
 );
 
@@ -114,7 +121,11 @@ CREATE OR REPLACE FUNCTION public.handle_new_user()
 RETURNS trigger AS $$
 BEGIN
   INSERT INTO public.profiles (id, username, avatar_url)
-  VALUES (new.id, split_part(new.email, '@', 1), COALESCE(new.raw_user_meta_data->>'avatar_url', ''));
+  VALUES (
+    new.id, 
+    COALESCE(new.raw_user_meta_data->>'username', split_part(new.email, '@', 1)), 
+    COALESCE(new.raw_user_meta_data->>'avatar_url', '')
+  );
   RETURN new;
 END;
 $$ LANGUAGE plpgsql SECURITY DEFINER;
@@ -122,3 +133,58 @@ $$ LANGUAGE plpgsql SECURITY DEFINER;
 CREATE TRIGGER on_auth_user_created
   AFTER INSERT ON auth.users
   FOR EACH ROW EXECUTE PROCEDURE public.handle_new_user();
+
+-- 11. KARMA & NOTIFICATIONS LOGIC
+CREATE OR REPLACE FUNCTION public.increment_karma(user_id UUID, amount INTEGER)
+RETURNS void AS $$
+BEGIN
+  UPDATE public.profiles
+  SET karma = karma + amount
+  WHERE id = user_id;
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+CREATE OR REPLACE FUNCTION public.handle_new_notification()
+RETURNS trigger AS $$
+DECLARE
+  target_user_id UUID;
+BEGIN
+  -- For posts (replies)
+  IF (TG_TABLE_NAME = 'posts') THEN
+    -- Get thread author
+    SELECT user_id INTO target_user_id FROM public.threads WHERE id = NEW.thread_id;
+    
+    -- Notify thread author if not the same person
+    IF (target_user_id != NEW.user_id) THEN
+      INSERT INTO public.notifications (user_id, type, reference_id)
+      VALUES (target_user_id, 'reply', NEW.thread_id);
+    END IF;
+  END IF;
+
+  -- For votes
+  IF (TG_TABLE_NAME = 'votes') THEN
+    -- Get target author (thread or post)
+    IF (NEW.target_type = 'thread') THEN
+      SELECT user_id INTO target_user_id FROM public.threads WHERE id = NEW.target_id;
+    ELSE
+      SELECT user_id INTO target_user_id FROM public.posts WHERE id = NEW.target_id;
+    END IF;
+
+    -- Notify author if it's an upvote and not the same person
+    IF (NEW.value = 1 AND target_user_id != NEW.user_id) THEN
+      INSERT INTO public.notifications (user_id, type, reference_id)
+      VALUES (target_user_id, 'vote', NEW.target_id);
+    END IF;
+  END IF;
+
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+CREATE TRIGGER on_post_created
+  AFTER INSERT ON public.posts
+  FOR EACH ROW EXECUTE PROCEDURE public.handle_new_notification();
+
+CREATE TRIGGER on_vote_created
+  AFTER INSERT ON public.votes
+  FOR EACH ROW EXECUTE PROCEDURE public.handle_new_notification();

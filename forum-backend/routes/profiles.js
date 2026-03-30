@@ -15,21 +15,28 @@ router.get('/:username', async (req, res) => {
 
     if (profileError) throw profileError;
 
-    // Fetch user's threads
+    // Fetch user's threads with categories
     const { data: threads } = await supabase
       .from('threads')
       .select('*, categories(name, slug)')
       .eq('user_id', profile.id)
       .order('created_at', { ascending: false });
 
-    // Fetch user's posts
+    // Fetch user's posts with thread info
     const { data: posts } = await supabase
       .from('posts')
       .select('*, threads(title, id)')
       .eq('user_id', profile.id)
       .order('created_at', { ascending: false });
 
-    res.json({ ...profile, threads, posts });
+    // Dynamic counts (already available in the arrays, but we could add them explicitly if needed)
+    res.json({ 
+      ...profile, 
+      threads, 
+      posts,
+      thread_count: threads?.length || 0,
+      post_count: posts?.length || 0
+    });
   } catch (err) {
     res.status(404).json({ error: 'User not found' });
   }

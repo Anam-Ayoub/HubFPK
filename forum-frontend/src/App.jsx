@@ -22,6 +22,7 @@ export default function App() {
             <Route path="/profile/:username" element={<Profile />} />
             <Route path="/search" element={<SearchResults />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Login />} />
           </Routes>
         </main>
         
