@@ -132,7 +132,7 @@ HubFPK/
 
 ## 👨‍💻 Team & Contributors
 
-This project was built as part of the **Citoyenneté et Initiation** module for the 2025-2026 academic year, supervised by **Mr. Chagraoui Mohamed**.
+This project was built as part of the **Citoyenneté et Initiation** module for the 2025-2026 academic year, supervised by **Mr. CHAKRAOUI Mohamed**.
 
 - **HABYBY Zahira**
 - **EL MAHI Nadia**
