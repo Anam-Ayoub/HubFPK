@@ -1,0 +1,93 @@
+# =============================
+# HubFPK — Root .gitignore
+# =============================
+
+# ─── Environment Files (SECRETS) ───────────────────────────────────────────
+# Never commit .env files — they contain API keys, DB credentials, etc.
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+.env.*.local
+
+# Keep the example templates (they are safe to commit)
+!.env.example
+
+# ─── Node.js / npm ─────────────────────────────────────────────────────────
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+package-lock.json
+yarn.lock
+
+# ─── Build Outputs ─────────────────────────────────────────────────────────
+dist/
+dist-ssr/
+build/
+out/
+.output/
+
+# ─── Vite / Frontend ───────────────────────────────────────────────────────
+*.local
+.vite/
+
+# ─── Analysis & Internal Docs ──────────────────────────────────────────────
+# The analysis is generated tooling output, not source code
+analysis.md
+
+# ─── Logs ──────────────────────────────────────────────────────────────────
+logs/
+*.log
+*.log.*
+
+# ─── OS Files ──────────────────────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ─── IDE / Editor ──────────────────────────────────────────────────────────
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.swp
+*.swo
+.project
+.classpath
+.settings/
+
+# ─── Testing ───────────────────────────────────────────────────────────────
+coverage/
+.nyc_output/
+*.lcov
+
+# ─── Temporary / Cache ─────────────────────────────────────────────────────
+.cache/
+.parcel-cache/
+.eslintcache
+.stylelintcache
+*.tmp
+*.temp
+tmp/
+temp/
+
+# ─── Miscellaneous ─────────────────────────────────────────────────────────
+*.pem
+*.key
+*.cert
+.vercel
+.netlify

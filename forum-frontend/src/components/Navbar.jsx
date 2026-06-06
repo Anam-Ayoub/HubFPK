@@ -1,6 +1,8 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { supabase } from '../supabaseClient';
 import { useEffect, useState } from 'react';
+import { formatDistanceToNow } from 'date-fns';
+import { fr } from 'date-fns/locale';
 import { 
   Search, Bell, User, LogOut, PlusCircle, 
   MessageSquare, Star, Zap, ChevronDown
@@ -76,6 +78,21 @@ export default function Navbar() {
     if (search.trim()) navigate(`/search?q=${encodeURIComponent(search)}`);
   };
 
+  const markAllRead = async () => {
+    if (!user || notifications.length === 0) return;
+    try {
+      const { error } = await supabase
+        .from('notifications')
+        .update({ is_read: true })
+        .eq('user_id', user.id)
+        .eq('is_read', false);
+      if (error) throw error;
+      setNotifications([]);
+    } catch (err) {
+      console.error('Error marking notifications as read:', err);
+    }
+  };
+
   return (
     <nav className="bg-[#1a5c3a] text-white sticky top-0 z-50 shadow-2xl shadow-[#1a5c3a]/20 border-b border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -136,7 +153,7 @@ export default function Navbar() {
                     <div className="absolute right-0 mt-4 w-80 bg-white rounded-3xl shadow-2xl border border-gray-100 py-4 text-gray-900 animate-in fade-in zoom-in-95 duration-200">
                       <div className="px-6 py-2 border-b border-gray-50 flex justify-between items-center mb-2">
                         <h3 className="font-black text-sm uppercase tracking-widest text-gray-400">Notifications</h3>
-                        {notifications.length > 0 && <button className="text-[10px] font-black text-[#1a5c3a] hover:underline">Tout marquer lu</button>}
+                        {notifications.length > 0 && <button onClick={markAllRead} className="text-[10px] font-black text-[#1a5c3a] hover:underline">Tout marquer lu</button>}
                       </div>
                       <div className="max-h-96 overflow-y-auto">
                         {notifications.length === 0 ? (
@@ -153,8 +170,12 @@ export default function Navbar() {
                                 <MessageSquare className="w-4 h-4 text-amber-600" />
                               </div>
                               <div className="flex-1">
-                                <p className="text-sm font-bold leading-tight">Nouveau message sur votre discussion</p>
-                                <p className="text-[10px] font-bold text-gray-400 mt-1 uppercase">Il y a 2 min</p>
+                                <p className="text-sm font-bold leading-tight">
+                                  {n.type === 'reply' ? 'Nouvelle réponse sur votre discussion' : 'Quelqu\'un a voté sur votre contenu'}
+                                </p>
+                                <p className="text-[10px] font-bold text-gray-400 mt-1 uppercase">
+                                  {formatDistanceToNow(new Date(n.created_at), { addSuffix: true, locale: fr })}
+                                </p>
                               </div>
                             </button>
                           ))

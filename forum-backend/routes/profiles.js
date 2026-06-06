@@ -4,6 +4,22 @@ const { createClient } = require('@supabase/supabase-js');
 
 const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY);
 
+// GET leaderboard (Top 10 users by karma)
+// NOTE: This route MUST be above /:username to avoid Express treating "leaderboard" as a username
+router.get('/leaderboard/top', async (req, res) => {
+  try {
+    const { data, error } = await supabase
+      .from('profiles')
+      .select('username, avatar_url, karma')
+      .order('karma', { ascending: false })
+      .limit(10);
+    if (error) throw error;
+    res.json(data);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 // GET profile by username
 router.get('/:username', async (req, res) => {
   try {
@@ -39,21 +55,6 @@ router.get('/:username', async (req, res) => {
     });
   } catch (err) {
     res.status(404).json({ error: 'User not found' });
-  }
-});
-
-// GET leaderboard (Top 10 users by karma)
-router.get('/leaderboard/top', async (req, res) => {
-  try {
-    const { data, error } = await supabase
-      .from('profiles')
-      .select('username, avatar_url, karma')
-      .order('karma', { ascending: false })
-      .limit(10);
-    if (error) throw error;
-    res.json(data);
-  } catch (err) {
-    res.status(500).json({ error: err.message });
   }
 });
 
