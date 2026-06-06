@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta CHAKRAOUIarset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HubFPK — Plateforme Communautaire Étudiante</title>
     <meta name="description" content="HubFPK est une plateforme communautaire full-stack pour les étudiants de la Faculté Polydisciplinaire de Khouribga. Forum, votes, karma, notifications temps réel.">
@@ -76,7 +76,7 @@
         <section class="section">
             <h2 class="section-title">Contexte & Problématique</h2>
             <p class="description-paragraph">
-                Au sein de la <strong>Faculté Polydisciplinaire de Khouribga</strong> (FPK), les étudiants manquent d'un espace numérique structuré pour éCHAKRAOUIanger, s'entraider et partager des ressources. Les canaux existants — groupes WhatsApp éphémères, pages Facebook non structurées — ne permettent pas de capitaliser sur les questions posées ni de constituer une mémoire collective.
+                Au sein de la <strong>Faculté Polydisciplinaire de Khouribga</strong> (FPK), les étudiants manquent d'un espace numérique structuré pour échanger, s'entraider et partager des ressources. Les canaux existants — groupes WhatsApp éphémères, pages Facebook non structurées — ne permettent pas de capitaliser sur les questions posées ni de constituer une mémoire collective.
             </p>
             <p class="description-paragraph">
                 <strong>HubFPK</strong> répond à ce besoin en offrant un forum communautaire moderne inspiré de <strong>Reddit</strong>, <strong>Stack Overflow</strong> et <strong>Discourse</strong>, entièrement dédié à la vie académique de la FPK.
@@ -88,28 +88,28 @@
                         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
                         Forum Structuré
                     </h3>
-                    <p>Centraliser les discussions par département académique (Informatique, Mathématiques, Économie, etc.) dans des fils de discussion organisés, avec tags, reCHAKRAOUIerCHAKRAOUIe et Markdown.</p>
+                    <p>Centraliser les discussions par département académique (Informatique, Mathématiques, Économie, etc.) dans des fils de discussion organisés, avec tags, recherche et Markdown.</p>
                 </div>
                 <div class="strategy-card">
                     <h3>
                         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
                         Votes & Karma
                     </h3>
-                    <p>Un système de votes ±1 (upvote/downvote) inspiré de Reddit permet de valoriser les contributions de qualité et de construire un score de réputation (karma) pour CHAKRAOUIaque étudiant.</p>
+                    <p>Un système de votes ±1 (upvote/downvote) inspiré de Reddit permet de valoriser les contributions de qualité et de construire un score de réputation (karma) pour chaque étudiant.</p>
                 </div>
                 <div class="strategy-card">
                     <h3>
                         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
                         Temps Réel
                     </h3>
-                    <p>Grâce aux WebSockets de Supabase Realtime, les notifications (nouvelles réponses, votes) apparaissent instantanément sans reCHAKRAOUIargement de page, offrant une expérience vivante.</p>
+                    <p>Grâce aux WebSockets de Supabase Realtime, les notifications (nouvelles réponses, votes) apparaissent instantanément sans rechargement de page, offrant une expérience vivante.</p>
                 </div>
                 <div class="strategy-card">
                     <h3>
                         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
                         Sécurité RLS
                     </h3>
-                    <p>Toutes les tables sont protégées par le Row Level Security de PostgreSQL, garantissant que CHAKRAOUIaque utilisateur ne peut modifier que ses propres données, même en accès direct à la base.</p>
+                    <p>Toutes les tables sont protégées par le Row Level Security de PostgreSQL, garantissant que chaque utilisateur ne peut modifier que ses propres données, même en accès direct à la base.</p>
                 </div>
             </div>
         </section>
@@ -118,7 +118,7 @@
         <section class="section">
             <h2 class="section-title">Sources d'Inspiration</h2>
             <p class="description-paragraph">
-                La conception de HubFPK s'est inspirée de trois plateformes communautaires qui ont révolutionné les éCHAKRAOUIanges en ligne. Nous avons adapté leurs concepts fondamentaux au contexte académique de la FPK.
+                La conception de HubFPK s'est inspirée de trois plateformes communautaires qui ont révolutionné les échanges en ligne. Nous avons adapté leurs concepts fondamentaux au contexte académique de la FPK.
             </p>
 
             <div class="inspiration-grid">
@@ -130,7 +130,7 @@
                 </div>
                 <div class="inspiration-card">
                     <div class="logo-text stackoverflow">Stack Overflow</div>
-                    <p style="font-size: 0.85rem; color: #aaa;">Référence Q&A teCHAKRAOUInique</p>
+                    <p style="font-size: 0.85rem; color: #aaa;">Référence Q&A technique</p>
                     <h4>Ce qu'on a retenu</h4>
                     <p>Système de tags (Question, Discussion, Ressource, Annonce), support complet du Markdown pour le formatage des publications, compteur de vues.</p>
                 </div>
@@ -138,19 +138,19 @@
                     <div class="logo-text discourse">Discourse</div>
                     <p style="font-size: 0.85rem; color: #aaa;">Forum open-source moderne</p>
                     <h4>Ce qu'on a retenu</h4>
-                    <p>Design épuré avec catégories colorées, notifications en temps réel sans reCHAKRAOUIargement, profils utilisateurs riCHAKRAOUIes avec réputation.</p>
+                    <p>Design épuré avec catégories colorées, notifications en temps réel sans rechargement, profils utilisateurs riches avec réputation.</p>
                 </div>
             </div>
         </section>
 
-        <!-- ========== STACK TECHAKRAOUINIQUE ========== -->
+        <!-- ========== STACK TECHNIQUE ========== -->
         <section class="section">
-            <h2 class="section-title">ArCHAKRAOUIitecture & Stack TeCHAKRAOUInique</h2>
+            <h2 class="section-title">Architecture & Stack Technique</h2>
             <p class="description-paragraph">
-                HubFPK est une application <strong>Full-Stack découplée</strong> en trois couCHAKRAOUIes indépendantes : un frontend React, un backend Express et une base PostgreSQL sur Supabase.
+                HubFPK est une application <strong>Full-Stack découplée</strong> en trois couches indépendantes : un frontend React, un backend Express et une base PostgreSQL sur Supabase.
             </p>
 
-            <div class="arCHAKRAOUI-diagram">
+            <div class="arch-diagram">
                 <pre>
 [Client React / Vite] ─────► [Backend Express.js] ─────► [Supabase (PostgreSQL)]
        │                                                          ▲
@@ -158,43 +158,43 @@
                     (Auth, Realtime, opérations directes)</pre>
             </div>
 
-            <div class="teCHAKRAOUI-table-wrapper">
-                <table class="teCHAKRAOUI-table">
+            <div class="tech-table-wrapper">
+                <table class="tech-table">
                     <thead>
                         <tr>
                             <th>Composant</th>
-                            <th>TeCHAKRAOUInologie</th>
+                            <th>Technologie</th>
                             <th>Description / Rôle</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><div class="teCHAKRAOUI-cell"><svg class="icon small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"></path></svg><strong>Base de Données</strong></div></td>
+                            <td><div class="tech-cell"><svg class="icon small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"></path></svg><strong>Base de Données</strong></div></td>
                             <td>PostgreSQL via Supabase</td>
-                            <td>Base relationnelle avec RLS, triggers automatiques, fonctions stockées et Realtime CHAKRAOUIannels (WebSocket).</td>
+                            <td>Base relationnelle avec RLS, triggers automatiques, fonctions stockées et Realtime channels (WebSocket).</td>
                         </tr>
                         <tr>
-                            <td><div class="teCHAKRAOUI-cell"><svg class="icon small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg><strong>Backend API</strong></div></td>
+                            <td><div class="tech-cell"><svg class="icon small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg><strong>Backend API</strong></div></td>
                             <td>Node.js / Express 5.2</td>
                             <td>7 modules de routes RESTful (catégories, threads, posts, votes, profils, notifications, stats).</td>
                         </tr>
                         <tr>
-                            <td><div class="teCHAKRAOUI-cell"><svg class="icon small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg><strong>Frontend</strong></div></td>
+                            <td><div class="tech-cell"><svg class="icon small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg><strong>Frontend</strong></div></td>
                             <td>React 19 / Vite 8 / TailwindCSS 4.2</td>
                             <td>SPA moderne avec routage client, composants réutilisables, skeleton loading et design responsive.</td>
                         </tr>
                         <tr>
-                            <td><div class="teCHAKRAOUI-cell"><svg class="icon small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg><strong>Contenu</strong></div></td>
+                            <td><div class="tech-cell"><svg class="icon small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg><strong>Contenu</strong></div></td>
                             <td>react-markdown / Lucide Icons</td>
                             <td>Éditeur Markdown avec aperçu en direct et icônes SVG dynamiques pour les catégories.</td>
                         </tr>
                         <tr>
-                            <td><div class="teCHAKRAOUI-cell"><svg class="icon small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg><strong>Temps Réel</strong></div></td>
+                            <td><div class="tech-cell"><svg class="icon small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg><strong>Temps Réel</strong></div></td>
                             <td>Supabase Realtime (WebSocket)</td>
-                            <td>Notifications instantanées via postgres_CHAKRAOUIanges sans polling. Abonnement par utilisateur.</td>
+                            <td>Notifications instantanées via postgres_changes sans polling. Abonnement par utilisateur.</td>
                         </tr>
                         <tr>
-                            <td><div class="teCHAKRAOUI-cell"><svg class="icon small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg><strong>Hébergement</strong></div></td>
+                            <td><div class="tech-cell"><svg class="icon small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg><strong>Hébergement</strong></div></td>
                             <td>Vercel (Frontend + Backend)</td>
                             <td>Déploiement automatique depuis GitHub, CDN mondial, HTTPS natif, serverless functions.</td>
                         </tr>
@@ -207,7 +207,7 @@
         <section class="section">
             <h2 class="section-title">Interfaces de l'Application</h2>
             <p class="description-paragraph">
-                Découvrez ci-dessous les captures d'écran de l'application HubFPK en production. CHAKRAOUIaque écran illustre une fonctionnalité clé de la plateforme.
+                Découvrez ci-dessous les captures d'écran de l'application HubFPK en production. chaque écran illustre une fonctionnalité clé de la plateforme.
             </p>
 
             <div class="screens-container">
@@ -220,7 +220,7 @@
                     <div class="text-container">
                         <span class="tag">Page Principale</span>
                         <h3>Page d'Accueil</h3>
-                        <p>Le point d'entrée de HubFPK. Un <strong>hero section</strong> avec barre de reCHAKRAOUIerCHAKRAOUIe centrale et tags populaires. En dessous, la <strong>grille des 7 départements</strong> (Informatique, Mathématiques, Économie, Sciences, Langues, Vie étudiante, Annonces) avec icônes dynamiques Lucide et compteurs de discussions. La sidebar affiCHAKRAOUIe les statistiques en temps réel (étudiants, sujets, messages), un guide de l'étudiant et la CHAKRAOUIarte communautaire.</p>
+                        <p>Le point d'entrée de HubFPK. Un <strong>hero section</strong> avec barre de recherche centrale et tags populaires. En dessous, la <strong>grille des 7 départements</strong> (Informatique, Mathématiques, Économie, Sciences, Langues, Vie étudiante, Annonces) avec icônes dynamiques Lucide et compteurs de discussions. La sidebar affiche les statistiques en temps réel (étudiants, sujets, messages), un guide de l'étudiant et la charte communautaire.</p>
                     </div>
                 </div>
 
@@ -268,7 +268,7 @@
                     <div class="text-container">
                         <span class="tag">Création</span>
                         <h3>Nouvelle Discussion — Éditeur Markdown</h3>
-                        <p>L'éditeur de création de discussion offre un CHAKRAOUIamp titre, un éditeur Markdown pleine page avec police monospace, un sélecteur de <strong>département</strong> (alimenté dynamiquement par l'API), et un système de <strong>tags visuels</strong> (Question, Discussion, Ressource, Annonce). Un encadré « Conseils d'écriture » guide les étudiants.</p>
+                        <p>L'éditeur de création de discussion offre un champ titre, un éditeur Markdown pleine page avec police monospace, un sélecteur de <strong>département</strong> (alimenté dynamiquement par l'API), et un système de <strong>tags visuels</strong> (Question, Discussion, Ressource, Annonce). Un encadré « Conseils d'écriture » guide les étudiants.</p>
                     </div>
                 </div>
 
@@ -280,7 +280,7 @@
                     <div class="text-container">
                         <span class="tag">Création</span>
                         <h3>Aperçu Markdown en Direct</h3>
-                        <p>Avant publication, l'étudiant peut basculer en <strong>mode aperçu</strong> pour visualiser le rendu final de son contenu Markdown. Les titres, le gras, l'italique, les listes et les blocs de code sont rendus via la bibliothèque <code>react-markdown</code>, garantissant des publications riCHAKRAOUIes et bien formatées.</p>
+                        <p>Avant publication, l'étudiant peut basculer en <strong>mode aperçu</strong> pour visualiser le rendu final de son contenu Markdown. Les titres, le gras, l'italique, les listes et les blocs de code sont rendus via la bibliothèque <code>react-markdown</code>, garantissant des publications riches et bien formatées.</p>
                     </div>
                 </div>
 
@@ -304,7 +304,7 @@
                     <div class="text-container">
                         <span class="tag">Discussion</span>
                         <h3>Vue d'un Fil de Discussion</h3>
-                        <p>Le cœur de l'expérience HubFPK. CHAKRAOUIaque thread affiCHAKRAOUIe le contenu en Markdown, l'auteur avec lien vers son profil, la catégorie, le tag, la date relative et le compteur de vues. Le <strong>système de vote</strong> (upvote/downvote) fonctionne en toggle : cliquer deux fois sur le même vote l'annule. Les réponses sont <strong>imbriquées sur 1 niveau</strong> et arrivent en <strong>temps réel</strong> via Supabase Realtime.</p>
+                        <p>Le cœur de l'expérience HubFPK. chaque thread affiche le contenu en Markdown, l'auteur avec lien vers son profil, la catégorie, le tag, la date relative et le compteur de vues. Le <strong>système de vote</strong> (upvote/downvote) fonctionne en toggle : cliquer deux fois sur le même vote l'annule. Les réponses sont <strong>imbriquées sur 1 niveau</strong> et arrivent en <strong>temps réel</strong> via Supabase Realtime.</p>
                     </div>
                 </div>
 
@@ -318,7 +318,7 @@
                 La base de données PostgreSQL hébergée sur Supabase est structurée autour de <strong>6 tables principales</strong> interconnectées, protégées par le Row Level Security (RLS) et automatisées par 3 triggers SQL.
             </p>
 
-            <div class="arCHAKRAOUI-diagram">
+            <div class="arch-diagram">
                 <pre>
 auth.users (Supabase Built-in)
      │
@@ -338,8 +338,8 @@ categories ──► threads (category_id FK)
      └─ 7 catégories seed : Informatique, Mathématiques, Économie, Langues, Sciences, Vie étudiante, Annonces</pre>
             </div>
 
-            <div class="teCHAKRAOUI-table-wrapper">
-                <table class="teCHAKRAOUI-table">
+            <div class="tech-table-wrapper">
+                <table class="tech-table">
                     <thead>
                         <tr>
                             <th>Table</th>
@@ -367,8 +367,8 @@ categories ──► threads (category_id FK)
                 Le backend expose <strong>7 modules de routes</strong> sous le préfixe <code>/api/</code>, servant de pont entre le frontend React et la base Supabase. Le CORS est restreint à l'URL du frontend déployé.
             </p>
 
-            <div class="teCHAKRAOUI-table-wrapper">
-                <table class="teCHAKRAOUI-table">
+            <div class="tech-table-wrapper">
+                <table class="tech-table">
                     <thead>
                         <tr>
                             <th>Endpoint</th>
@@ -378,13 +378,13 @@ categories ──► threads (category_id FK)
                     </thead>
                     <tbody>
                         <tr><td><strong>/api/categories</strong></td><td>GET</td><td>Liste des 7 départements avec comptage de threads (Promise.all)</td></tr>
-                        <tr><td><strong>/api/threads</strong></td><td>GET / POST</td><td>Liste filtrée (catégorie, reCHAKRAOUIerCHAKRAOUIe ilike), création. Votes batCHAKRAOUI. Threads épinglés en tête.</td></tr>
+                        <tr><td><strong>/api/threads</strong></td><td>GET / POST</td><td>Liste filtrée (catégorie, recherche ilike), création. Votes batch. Threads épinglés en tête.</td></tr>
                         <tr><td><strong>/api/threads/:id</strong></td><td>GET</td><td>Thread complet + posts + profils + votes. Incrémente view_count.</td></tr>
                         <tr><td><strong>/api/posts</strong></td><td>POST</td><td>Création de réponse + notification auto à l'auteur du thread.</td></tr>
                         <tr><td><strong>/api/votes</strong></td><td>POST</td><td>Vote toggle : même valeur → suppression, différente → mise à jour, nouveau → création.</td></tr>
                         <tr><td><strong>/api/profiles/:username</strong></td><td>GET</td><td>Profil complet + threads + posts de l'utilisateur.</td></tr>
                         <tr><td><strong>/api/profiles/leaderboard/top</strong></td><td>GET</td><td>Top 10 utilisateurs par karma (classement).</td></tr>
-                        <tr><td><strong>/api/notifications/:userId</strong></td><td>GET / PATCHAKRAOUI</td><td>Notifications non lues + marquage comme lues.</td></tr>
+                        <tr><td><strong>/api/notifications/:userId</strong></td><td>GET / PATCH</td><td>Notifications non lues + marquage comme lues.</td></tr>
                         <tr><td><strong>/api/stats</strong></td><td>GET</td><td>Compteurs globaux (users, threads, posts) en parallèle.</td></tr>
                     </tbody>
                 </table>
@@ -395,7 +395,7 @@ categories ──► threads (category_id FK)
         <section class="section">
             <h2 class="section-title">Évaluation & Analyse Critique</h2>
             <p class="description-paragraph">
-                Une analyse approfondie du projet a été réalisée afin d'évaluer sa maturité teCHAKRAOUInique. Voici la synthèse des scores attribués à CHAKRAOUIaque dimension :
+                Une analyse approfondie du projet a été réalisée afin d'évaluer sa maturité technique. Voici la synthèse des scores attribués à chaque dimension :
             </p>
 
             <div class="eval-table-wrapper">
@@ -409,10 +409,10 @@ categories ──► threads (category_id FK)
                     </thead>
                     <tbody>
                         <tr><td><strong>UI / UX</strong></td><td><span class="score-badge high">8 / 10</span></td><td>Design moderne et cohérent, animations, skeleton loading, palette vert/ambre</td></tr>
-                        <tr><td><strong>ArCHAKRAOUIitecture</strong></td><td><span class="score-badge high">7 / 10</span></td><td>Découplée et claire, double voie d'accès BDD à harmoniser</td></tr>
+                        <tr><td><strong>Architecture</strong></td><td><span class="score-badge high">7 / 10</span></td><td>Découplée et claire, double voie d'accès BDD à harmoniser</td></tr>
                         <tr><td><strong>Fonctionnalités</strong></td><td><span class="score-badge high">7 / 10</span></td><td>Bon cœur fonctionnel (13+ features), bugs critiques corrigés</td></tr>
                         <tr><td><strong>Qualité de Code</strong></td><td><span class="score-badge high">7 / 10</span></td><td>Lisible, structuré, boilerplate nettoyé, composants réutilisables</td></tr>
-                        <tr><td><strong>Base de Données</strong></td><td><span class="score-badge high">7 / 10</span></td><td>SCHAKRAOUIéma bien pensé, RLS complet, triggers automatiques</td></tr>
+                        <tr><td><strong>Base de Données</strong></td><td><span class="score-badge high">7 / 10</span></td><td>Schéma bien pensé, RLS complet, triggers automatiques</td></tr>
                         <tr><td><strong>Performance</strong></td><td><span class="score-badge medium">6 / 10</span></td><td>Promise.all, WebSocket, skeleton — mais N+1 queries et pas de pagination</td></tr>
                         <tr><td><strong>Sécurité</strong></td><td><span class="score-badge low">5 / 10</span></td><td>RLS + CORS corrigé, mais auth backend (JWT middleware) reste à implémenter</td></tr>
                     </tbody>
