@@ -1,23 +1,28 @@
 <div align="center">
-  <img src="docs/logo_FPK.png" alt="HubFPK Logo" width="150" />
-  <h1>HubFPK</h1>
+
+  <!-- Boutons flashys au tout premier plan -->
+  <a href="https://userv-alt.github.io/HubFPK/" target="_blank">
+    <img src="https://img.shields.io/badge/📖_VOIR_LE_SITE_D'EXPLICATION_DU_PROJET-1a5c3a?style=for-the-badge&logo=readme&logoColor=white" height="55" alt="Explications du projet" />
+  </a>
+  <br><br>
+  <a href="https://hub-fpk-hw9z.vercel.app/" target="_blank">
+    <img src="https://img.shields.io/badge/🚀_ACCÉDER_DIRECTEMENT_À_L'APPLICATION_LIVE-FBBF24?style=for-the-badge&logo=vercel&logoColor=black" height="55" alt="Application Live" />
+  </a>
+
+  <br><br><br>
+
+  <!-- Logo HubFPK version Application -->
+  <h1 style="font-size: 3.5rem; font-weight: 900; margin-bottom: 0;">
+    Hub<span style="color: #FBBF24;">FPK</span>
+  </h1>
+  <p style="letter-spacing: 0.3em; color: #666; font-size: 0.8rem; margin-top: 0;"><b>COMMUNITY</b></p>
+  
   <p><strong>Une plateforme communautaire Full-Stack pour la Faculté Polydisciplinaire de Khouribga (FPK)</strong></p>
 
   [![Vercel Deployment](https://img.shields.io/badge/Déployé_sur-Vercel-black?logo=vercel)](#)
   [![React](https://img.shields.io/badge/React-19-blue?logo=react)](#)
   [![Express](https://img.shields.io/badge/Express-5.2-lightgrey?logo=express)](#)
   [![Supabase](https://img.shields.io/badge/Supabase-Database_&_Auth-3ECF8E?logo=supabase)](#)
-
-  <br><br>
-
-  <!-- Big Flashy Buttons -->
-  <a href="https://userv-alt.github.io/HubFPK/" target="_blank">
-    <img src="https://img.shields.io/badge/📖_Cliquez_pour_accéder_aux_explications_du_projet-1a5c3a?style=for-the-badge&logo=readme&logoColor=white" alt="Explications du projet" />
-  </a>
-  &nbsp;&nbsp;&nbsp;
-  <a href="https://hub-fpk-hw9z.vercel.app/" target="_blank">
-    <img src="https://img.shields.io/badge/🚀_Accéder_à_l'application_Live-FBBF24?style=for-the-badge&logo=vercel&logoColor=black" alt="Application Live" />
-  </a>
 
 </div>
 
