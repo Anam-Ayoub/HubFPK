@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HubFPK — Plateforme Communautaire Étudiante</title>
+    <title>HubFPK - Plateforme Communautaire Étudiante</title>
     <meta name="description" content="HubFPK est une plateforme communautaire full-stack pour les étudiants de la Faculté Polydisciplinaire de Khouribga. Forum, votes, karma, notifications temps réel.">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -31,7 +31,7 @@
                     </div>
                     <div class="metadata-item">
                         <h4>Année Universitaire</h4>
-                        <p class="big-bold">2025 — 2026</p>
+                        <p class="big-bold">2025 - 2026</p>
                     </div>
                 </div>
 
@@ -76,7 +76,7 @@
         <section class="section">
             <h2 class="section-title">Contexte & Problématique</h2>
             <p class="description-paragraph">
-                Au sein de la <strong>Faculté Polydisciplinaire de Khouribga</strong> (FPK), les étudiants manquent d'un espace numérique structuré pour échanger, s'entraider et partager des ressources. Les canaux existants — groupes WhatsApp éphémères, pages Facebook non structurées — ne permettent pas de capitaliser sur les questions posées ni de constituer une mémoire collective.
+                Au sein de la <strong>Faculté Polydisciplinaire de Khouribga</strong> (FPK), les étudiants manquent d'un espace numérique structuré pour échanger, s'entraider et partager des ressources. Les canaux existants - groupes WhatsApp éphémères, pages Facebook non structurées - ne permettent pas de capitaliser sur les questions posées ni de constituer une mémoire collective.
             </p>
             <p class="description-paragraph">
                 <strong>HubFPK</strong> répond à ce besoin en offrant un forum communautaire moderne inspiré de <strong>Reddit</strong>, <strong>Stack Overflow</strong> et <strong>Discourse</strong>, entièrement dédié à la vie académique de la FPK.
@@ -260,19 +260,19 @@
                     </div>
                 </div>
 
-                <!-- Création de thread — Éditeur -->
+                <!-- Création de thread - Éditeur -->
                 <div class="screenshot-card">
                     <div class="image-container">
                         <img src="screens/postCreation1.png" alt="Éditeur de discussion HubFPK avec sélection de département">
                     </div>
                     <div class="text-container">
                         <span class="tag">Création</span>
-                        <h3>Nouvelle Discussion — Éditeur Markdown</h3>
+                        <h3>Nouvelle Discussion - Éditeur Markdown</h3>
                         <p>L'éditeur de création de discussion offre un champ titre, un éditeur Markdown pleine page avec police monospace, un sélecteur de <strong>département</strong> (alimenté dynamiquement par l'API), et un système de <strong>tags visuels</strong> (Question, Discussion, Ressource, Annonce). Un encadré « Conseils d'écriture » guide les étudiants.</p>
                     </div>
                 </div>
 
-                <!-- Création de thread — Aperçu Markdown -->
+                <!-- Création de thread - Aperçu Markdown -->
                 <div class="screenshot-card reverse">
                     <div class="image-container">
                         <img src="screens/postCreation2_markdown.png" alt="Aperçu Markdown en temps réel dans HubFPK">
@@ -328,7 +328,7 @@ profiles (id PK → auth.users)          ← Trigger: handle_new_user()
      ├──► threads (user_id FK)
      │         │
      │         ├──► posts (thread_id FK)
-     │         │       └──► posts (parent_post_id FK — 1 niveau)
+     │         │       └──► posts (parent_post_id FK - 1 niveau)
      │         │
      │         └──► votes (target_id polymorphe)    ← Trigger: handle_new_notification()
      │
@@ -362,7 +362,7 @@ categories ──► threads (category_id FK)
 
         <!-- ========== API BACKEND ========== -->
         <section class="section">
-            <h2 class="section-title">API REST — Backend Express</h2>
+            <h2 class="section-title">API REST - Backend Express</h2>
             <p class="description-paragraph">
                 Le backend expose <strong>7 modules de routes</strong> sous le préfixe <code>/api/</code>, servant de pont entre le frontend React et la base Supabase. Le CORS est restreint à l'URL du frontend déployé.
             </p>
@@ -413,7 +413,7 @@ categories ──► threads (category_id FK)
                         <tr><td><strong>Fonctionnalités</strong></td><td><span class="score-badge high">7 / 10</span></td><td>Bon cœur fonctionnel (13+ features), bugs critiques corrigés</td></tr>
                         <tr><td><strong>Qualité de Code</strong></td><td><span class="score-badge high">7 / 10</span></td><td>Lisible, structuré, boilerplate nettoyé, composants réutilisables</td></tr>
                         <tr><td><strong>Base de Données</strong></td><td><span class="score-badge high">7 / 10</span></td><td>Schéma bien pensé, RLS complet, triggers automatiques</td></tr>
-                        <tr><td><strong>Performance</strong></td><td><span class="score-badge medium">6 / 10</span></td><td>Promise.all, WebSocket, skeleton — mais N+1 queries et pas de pagination</td></tr>
+                        <tr><td><strong>Performance</strong></td><td><span class="score-badge medium">6 / 10</span></td><td>Promise.all, WebSocket, skeleton - mais N+1 queries et pas de pagination</td></tr>
                         <tr><td><strong>Sécurité</strong></td><td><span class="score-badge low">5 / 10</span></td><td>RLS + CORS corrigé, mais auth backend (JWT middleware) reste à implémenter</td></tr>
                     </tbody>
                 </table>

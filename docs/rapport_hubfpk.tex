@@ -322,7 +322,7 @@ profiles (id PK → auth.users)
      ├──► threads (user_id FK)
      │         │
      │         ├──► posts (thread_id FK)
-     │         │       └──► posts (parent_post_id FK — nesting 1 niveau)
+     │         │       └──► posts (parent_post_id FK - nesting 1 niveau)
      │         │
      │         └──► votes (target_id polymorphe)
      │
@@ -510,7 +510,7 @@ Toutes les tables sont protégées par le système RLS de PostgreSQL. Les politi
 
 
 % ============================================================
-% CHAPITRE 4 : BACKEND — API REST
+% CHAPITRE 4 : BACKEND - API REST
 % ============================================================
 \chapter{Le Backend : API REST Express.js}
 
@@ -606,7 +606,7 @@ Le middleware CORS est configuré pour n'accepter les requêtes que depuis l'URL
 
 
 % ============================================================
-% CHAPITRE 5 : FRONTEND — INTERFACE UTILISATEUR
+% CHAPITRE 5 : FRONTEND - INTERFACE UTILISATEUR
 % ============================================================
 \chapter{Le Frontend : Application React}
 

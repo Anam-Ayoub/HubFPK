@@ -35,5 +35,5 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.key === 'Escape') closeModal();
     });
 
-    console.log("HubFPK — Site de présentation chargé.");
+    console.log("HubFPK - Site de présentation chargé.");
 });
