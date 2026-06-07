@@ -356,7 +356,7 @@ p.description-paragraph {
     box-shadow: var(--shadow-sm);
     border: 1px solid var(--border-color);
     padding: 2.5rem;
-    align-items: center;
+    align-items: flex-start;
     transition: var(--transition-smooth);
 }
 
