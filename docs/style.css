@@ -219,7 +219,6 @@ h2.section-title {
     font-size: 2.2rem;
     font-weight: 700;
     color: var(--accent-dark);
-    margin-bottom: 1.5rem;
     position: relative;
 }
 
@@ -237,7 +236,6 @@ p.description-paragraph {
     font-size: 1.1rem;
     color: var(--text-secondary);
     max-width: 800px;
-    margin-bottom: 1.5rem;
 }
 
 /* ================================
