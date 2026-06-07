@@ -2,11 +2,11 @@
 
   <!-- Boutons flashys au tout premier plan -->
   <a href="https://userv-alt.github.io/HubFPK/" target="_blank">
-    <img src="https://img.shields.io/badge/📖_VOIR_LE_SITE_D'EXPLICATION_DU_PROJET-1a5c3a?style=for-the-badge&logo=readme&logoColor=white" height="55" alt="Explications du projet" />
+    <img src="https://img.shields.io/badge/📖_VOIR_LE_SITE_D'EXPLICATION_DU_PROJET-1a5c3a?style=for-the-badge&logo=readme&logoColor=white" height="100" alt="Explications du projet" />
   </a>
   <br><br>
   <a href="https://hub-fpk-hw9z.vercel.app/" target="_blank">
-    <img src="https://img.shields.io/badge/🚀_ACCÉDER_DIRECTEMENT_À_L'APPLICATION_LIVE-FBBF24?style=for-the-badge&logo=vercel&logoColor=black" height="55" alt="Application Live" />
+    <img src="https://img.shields.io/badge/🚀_ACCÉDER_DIRECTEMENT_À_L'APPLICATION_LIVE-FBBF24?style=for-the-badge&logo=vercel&logoColor=black" height="100" alt="Application Live" />
   </a>
 
   <br><br><br>
